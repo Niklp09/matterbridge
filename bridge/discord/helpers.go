@@ -65,11 +65,6 @@ func (b *Bdiscord) getNick(user *discordgo.User, guildID string) string {
 		b.nickMemberMap[member.Nick] = member
 		return member.Nick
 	}
-	// idk if this works...
-	if member.GlobalName != "" {
-		b.nickMemberMap[member.GlobalName] = member
-		return member.GlobalName
-	}
 	return user.Username
 }
 

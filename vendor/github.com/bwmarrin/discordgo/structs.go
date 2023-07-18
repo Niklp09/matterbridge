@@ -1372,10 +1372,6 @@ type Member struct {
 	// The time at which the member's timeout will expire.
 	// Time in the past or nil if the user is not timed out.
 	CommunicationDisabledUntil *time.Time `json:"communication_disabled_until"`
-	
-	// The user's display name, if it is set.
-	// For bots, this is the application name.
-	GlobalName string `json:"global_name"`
 }
 
 // Mention creates a member mention
