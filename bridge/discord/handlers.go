@@ -126,6 +126,9 @@ func (b *Bdiscord) messageCreate(s *discordgo.Session, m *discordgo.MessageCreat
 		rmsg.Username = b.getNick(m.Author, m.GuildID)
 	} else {
 		rmsg.Username = m.Author.Username
+		if m.Author.GlobalName != "" {
+			rmsg.Username = m.Author.GlobalName
+		}
 		if !fromWebhook && b.GetBool("UseDiscriminator") {
 			rmsg.Username += "#" + m.Author.Discriminator
 		}
